@@ -1,5 +1,6 @@
 import React,{ useState } from 'react'
 import "./calculator.css"
+import * as math from 'mathjs';
 
 export default function Calculator() {
 
@@ -49,7 +50,7 @@ export default function Calculator() {
 
   const calculate = () => {
     try {
-      setResult(eval(result).toString());
+      setResult(math.evaluate(result).toString());
       setSelectedOperator('');
     } catch (err) {
       setResult('Error');
