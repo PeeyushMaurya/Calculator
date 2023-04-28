@@ -15,7 +15,7 @@ export default function Calculator() {
         // If a different operator is already selected, update the selected operator
         setSelectedOperator(buttonName);
         setResult(result.slice(0, -1).concat(buttonName));
-      } else {
+      } else if (!selectedOperator) {
         // Otherwise, select the operator and append it to the result
         setSelectedOperator(buttonName);
         setResult(result.concat(buttonName));
